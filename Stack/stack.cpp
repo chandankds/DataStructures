@@ -1,6 +1,6 @@
 /*
  * stack.cpp
- *
+ *   It can grow dynamically and keeps track of minimum element as well.
  *  Created on: 25-Jun-2019
  *      Author: chs
  */
@@ -14,16 +14,29 @@ class stack{
 
     private:
 	int top;
-	int Arr[DEFAULT_SIZE];
-
+	int* Arr = NULL;
+	int length = 0;
     public:
-	stack(void)
+	stack(void) // @suppress("Cl4ass members should be properly initialized")
 	{
+		this->Arr = new int[DEFAULT_SIZE];
 	    for(int i=0; i<DEFAULT_SIZE; i++)
 	    {
 		Arr[i] = 0;
 	    }
 	    this->top = -1;
+	    length += DEFAULT_SIZE;
+	}
+
+	int* resize_array(int* Arr)
+	{
+		int* newArr = new int[length + DEFAULT_SIZE];
+		for(int i =0; i < length; i++ ){
+			newArr[i] = Arr[i];
+		}
+		length += DEFAULT_SIZE;
+		delete Arr;
+		return newArr;
 	}
 
 	bool isEmpty(void)
@@ -33,17 +46,16 @@ class stack{
 
 	bool isFull(void)
 	{
-	    return (top == DEFAULT_SIZE -1);
+	    return (top == length -1);
 	}
 
 	void push(int element)
 	{
 	    if(isFull())
 	    {
-		cout<<"stack is full "<<endl;
-		return;
+	    	Arr = resize_array(Arr);
+	    	cout<<"stack is full extending stack "<<endl;
 	    }
-	    else
 		Arr[++top] = element;
 	}
 
@@ -69,11 +81,15 @@ class stack{
 
 	void print(void)
 	{
-	    for(int i=0; i<DEFAULT_SIZE; i++)
+	    for(int i=0; i<length; i++)
 	    {
 		cout<<Arr[i]<<"->";
 	    }
 	    cout<<endl;
+	}
+
+	~stack(){
+		delete Arr;
 	}
 
 };
@@ -81,7 +97,7 @@ class stack{
 int menuChoices(void)
 {
     int choice;
-    cout << "STATIC STACK OPERATIONS:" << endl;
+    cout << "DYNAMIC STACK OPERATIONS:" << endl;
     cout << "0. EXIT" << endl;
     cout << "1. PUSH" << endl;
     cout << "2. POP" << endl;
