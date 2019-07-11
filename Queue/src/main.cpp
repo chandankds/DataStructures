@@ -28,7 +28,7 @@ int main(void)
 //			}
 //			else
 //				cout << "queue overflow !!!" << endl;
-//			break;
+			break;
 
 		case DEQUEUE: //delete ele from the queue which is at front pos
 			if( !q.is_queue_empty())

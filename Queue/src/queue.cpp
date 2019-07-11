@@ -16,7 +16,7 @@
 	}
 
 	void queue::print_queue(){
-		for(int i=front ; i< ( rear + 1 ) % size; i++){
+		for(int i=front ; i<=(rear +1) % size; i++){
 			cout<<arr[i]<<"->";
 		}
 		cout<<endl;
@@ -35,18 +35,17 @@
 	void queue:: enqueu(int ele)
 	{
 		if(is_queue_full()){
+			cout<<"RESIZED GOT CALLED"<<endl<<endl;
 			resize();
 		}
-		else{
 		//- increment value of rear by 1
 			rear = ( rear + 1 ) % size;
 			//- push ele into the queue at rear position
-			cout<<"value of rear is now :: " << rear << "value of size is now :: " << size<< endl;
+			cout<<"value of rear is now :: " << rear << "  value of size is now :: " << size<< endl;
 			arr[ rear ] = ele;
 			cout<<"element is added to the rear"<< endl;
 			if( front == -1 )
 				front = 0;
-		}
 	}
 
 	void queue:: dequeue(void)
@@ -66,13 +65,16 @@
 
 	void queue:: resize(){
 		int* biggi = new int[size*2];
-		for(int i=front; i<( rear + 1 ) % size; i++)
+		cout<<endl<<endl<<"front = "<<front<<" rear = "<<rear<<endl;
+		for(int i=front; i <= (rear +1)%size; i++)
 		{
 			biggi[i] = arr[i];
+			cout<<"biggi = "<<biggi[i]<<" arr = "<<arr[i]<<endl;
 		}
-		delete arr;
 		arr = biggi;
 		size = size *2;
+		delete[] arr;
+
 	}
 
 
