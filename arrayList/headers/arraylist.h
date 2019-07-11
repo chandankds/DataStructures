@@ -13,14 +13,22 @@ using namespace std;
 class arraylist
 {
 private:
-	int* myarray;
-	int  myindex;
-	int  mycapacity;
+	int* myElements;
+	int  mySize;
+	int  myCapacity;
 public :
-	void addElement(int element);
-	void insertElement(int index, int element);
+	arraylist();
+	void add(int element);
+	int  get(int index);
+	int  size();
+	void clear();
+	bool isEmpty();
+	void set(int index, int element);
+	void insert(int index, int element);
+	void remove(int index);
 };
 
+ostream& operator <<(ostream& out, arraylist& list);
 
 
 #endif /* HEADERS_ARRAYLIST_H_ */
