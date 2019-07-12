@@ -21,6 +21,7 @@ int main(void)
 //			if( !q.is_queue_full())
 //			{
 				int ele;
+				cout<<"Doing this change to check if it gets automatically updated on laptop"<<endl;
 				cout << "enter an ele: ";
 				cin >> ele;
 				q.enqueu(ele);
