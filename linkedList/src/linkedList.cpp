@@ -110,9 +110,22 @@ void mylist:: addAt(int index, int data){
 	cnt++;
 }
 
+int mylist:: searchNode(int data){
+	node* trav = head;
+	int cnt = 0;
+	while(trav != NULL){
+		if(trav->data == data){
+			return cnt;
+		}
+		trav = trav->next;
+		cnt++;
+	}
+	return -1;
+}
 
-//lalallalallallalla
-
+int mylist::findMiddle(void){
+	return cnt/2;
+}
 
 
 
