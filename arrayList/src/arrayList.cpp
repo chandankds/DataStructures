@@ -13,11 +13,13 @@ arraylist::arraylist(){
 }
 
 void arraylist::add(int value){
+	arraylist:: checkResize();
 	myElements[mySize] = value;
 	mySize++;
 }
 
 void arraylist::insert(int index, int element){
+	arraylist::checkResize();
 	for(int i = mySize; i > index; i--){
 		 myElements[i] = myElements[i-1];
 	}
@@ -51,6 +53,16 @@ void arraylist::remove(int index){
 		myElements[i] = myElements[i+1];
 	}
 	mySize--;
+}
+
+void arraylist::checkResize(){
+	if(mySize == myCapacity){
+		int* myNewElements = new int[myCapacity * 2];
+		for(int i=0 ; i<mySize; i++){
+			myNewElements[i] = myElements[i];
+		}
+		myElements = myNewElements;
+	}
 }
 
 // I am overloading the operator so that i can print the list as a normal variable
