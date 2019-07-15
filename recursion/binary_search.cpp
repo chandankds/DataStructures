@@ -32,7 +32,7 @@ int binarySearch(int key, int* arr){
 	return binaryHelper(key, arr, 0, 7-1);
 }
 
-int main(){
+int mainbb(){
 	int key;
 	int arr[] = {10,20,30,40,50,60,70};
 	cout<<sizeof(arr)/sizeof(*arr)<<endl;
