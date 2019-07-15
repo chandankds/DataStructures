@@ -21,6 +21,7 @@ int main(void)
 //			if( !q.is_queue_full())
 //			{
 				int ele;
+				cout<<"Doing this change to check if it gets automatically updated on laptop"<<endl;
 				cout << "enter an ele: ";
 				cin >> ele;
 				q.enqueu(ele);
@@ -28,7 +29,7 @@ int main(void)
 //			}
 //			else
 //				cout << "queue overflow !!!" << endl;
-//			break;
+			break;
 
 		case DEQUEUE: //delete ele from the queue which is at front pos
 			if( !q.is_queue_empty())

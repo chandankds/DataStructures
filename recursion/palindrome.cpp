@@ -19,14 +19,17 @@ bool palandrome(string str)
         return str[0] == str[length-1] && palandrome(str.substr(1,length-2));
     }
 }
-int main4()
+int mainrr()
 {
-    string str;
+    string str, cut;
     cin>>str;
+    cut = str.substr(1,str.length()-2);
+    cout<<cut<<endl;
     if(palandrome(str))
         cout<<"yes"<<endl;
     else
         cout<<"no"<<endl;
+
     return 0;
 }
 
