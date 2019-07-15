@@ -26,7 +26,11 @@ int main() {
 	cout<<endl<<"count of Nodes :: " << l.countOfNodes() << endl;
 	l.addAt(2,69);
 	l.printList();
+	cout<< "node found at " <<l.searchNode(69) << endl;
+	l.addAt(4,89);
 	cout<<"count of Nodes :: " << l.countOfNodes() << endl;
+	cout<<"middle of the list is :: " << l.findMiddle() << endl;
+
 	return 0;
 }
 

@@ -24,6 +24,8 @@ public:
 	void addAtfirst(int data);
 	void deleteAtFirst(void);
 	void addAt(int index, int data);
+	int  searchNode(int data);
+	int findMiddle(void);
 
 };
 
