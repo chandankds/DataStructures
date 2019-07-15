@@ -59,17 +59,59 @@ void mylist::deleteAtLast(void){
 	}
 }
 
+void mylist::addAtfirst(int data){
+	node* newnode = new node(data);
+	if(isListEmpty()){
+		newnode = head;
+		cnt++;
+	}
+	else{
+		node* temp = head;
+		head = newnode;
+		newnode->next = temp;
+		cnt++;
+	}
+}
+
+void mylist::deleteAtFirst(void){
+	if(isListEmpty()){
+		cout<<"list is empty"<< endl;
+		return;
+	}
+	else{
+		node* temp = head;
+		head = temp ->next;
+		delete temp;
+		cnt--;
+	}
+}
+
 void mylist:: printList(void){
 	node* trav = head;
 	while(trav != NULL){
 		cout<<trav->data << "->";
 		trav = trav->next;
 	}
+	cout<<endl;
+}
 
+void mylist:: addAt(int index, int data){
+	node* newnode = new node(data);
+	int i = 0;
+	node* temp = NULL;
+	node* trav = head;
+	while(i != index){
+		temp = trav;
+		trav = trav->next;
+		i++;
+	}
+	temp->next = newnode;
+	newnode->next = trav;
+	cnt++;
 }
 
 
-
+//lalallalallallalla
 
 
 

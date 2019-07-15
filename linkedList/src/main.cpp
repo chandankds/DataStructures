@@ -13,11 +13,20 @@ int main() {
 	l.addAtLast(30);
 	l.addAtLast(40);
 	l.addAtLast(50);
+	cout<<"count of Nodes :: " << l.countOfNodes() << endl;
 	l.printList();
 	l.deleteAtLast();
+	l.addAtfirst(99);
 	cout<<endl;
 	l.printList();
-
+	l.deleteAtFirst();
+	cout<< endl;
+	cout<<"count of Nodes :: " << l.countOfNodes() << endl;
+	l.printList();
+	cout<<endl<<"count of Nodes :: " << l.countOfNodes() << endl;
+	l.addAt(2,69);
+	l.printList();
+	cout<<"count of Nodes :: " << l.countOfNodes() << endl;
 	return 0;
 }
 

@@ -21,6 +21,10 @@ public:
 	void addAtLast(int data);
 	void deleteAtLast(void);
 	void printList(void);
+	void addAtfirst(int data);
+	void deleteAtFirst(void);
+	void addAt(int index, int data);
+
 };
 
 
