@@ -16,6 +16,7 @@ private:
 	int* myElements;
 	int  mySize;
 	int  myCapacity;
+	void checkResize();
 public :
 	arraylist();
 	void add(int element);
